@@ -8,13 +8,13 @@ interface PerfilCobranca {
 }
 
 class PerfilRotativo implements PerfilCobranca {
-    private static final double VALOR_POR_HORA = 10.0;
+    private static final double valor_por_hora = 10.0;
 
     @Override
     public double calcularValor(int minutos) {
         if (minutos <= 0) return 0.0;
         int horasIniciadas = (int) Math.ceil(minutos / 60.0);
-        return horasIniciadas * VALOR_POR_HORA;
+        return horasIniciadas * valor_por_hora;
     }
     @Override
     public String getNomePerfil() {
@@ -22,11 +22,11 @@ class PerfilRotativo implements PerfilCobranca {
     }
 }
 class PerfilMensalista implements PerfilCobranca {
-    private static final double VALOR_FIXO = 150.0;
+    private static final double Valor_fixo = 150.0;
 
     @Override
     public double calcularValor(int minutos) {
-        return VALOR_FIXO;
+        return Valor_fixo;
     }
     @Override
     public String getNomePerfil() {
@@ -35,19 +35,19 @@ class PerfilMensalista implements PerfilCobranca {
 }
 
 class PerfilConveniado implements PerfilCobranca {
-    private static final int MINUTOS_GRATUITOS = 30;
-    private static final double VALOR_POR_HORA = 8.0;
-    private static final double PERCENTUAL_DESCONTO = 0.20;
+    private static final int minutos_gratuitos = 30;
+    private static final double valor_por_hora = 8.0;
+    private static final double porcento_desconto = 0.20;
 
     @Override
     public double calcularValor(int minutos) {
-        if (minutos <= MINUTOS_GRATUITOS) {
+        if (minutos <= minutos_gratuitos) {
             return 0.0;
         }
-        int minutosCobranca = minutos - MINUTOS_GRATUITOS;
+        int minutosCobranca = minutos - minutos_gratuitos;
         int horasIniciadas = (int) Math.ceil(minutosCobranca / 60.0);
-        double valorBruto = horasIniciadas * VALOR_POR_HORA;
-        return valorBruto * (1.0 - PERCENTUAL_DESCONTO);
+        double valorBruto = horasIniciadas * valor_por_hora;
+        return valorBruto * (1.0 - porcento_desconto);
     }
 
     @Override
