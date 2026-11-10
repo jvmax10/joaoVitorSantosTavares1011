@@ -57,11 +57,11 @@ public class Questao1 {
     }
 
     public static class Compras implements Observer {
-        private static final int LIMITE_ALERTA = 5;
+        private static final int limite_alerta = 5;
 
         @Override
         public void atualizar(String nomeProduto, int novaQuantidade) {
-            if (novaQuantidade < LIMITE_ALERTA) {
+            if (novaQuantidade < limite_alerta) {
                 System.out.println("[COMPRAS] ALERTA: O estoque do produto '" + nomeProduto + 
                                     "' ficou abaixo do limite seguro! Quantidade atual: " + novaQuantidade);
             }
