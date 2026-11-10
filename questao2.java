@@ -91,7 +91,7 @@ public class Main {
         int tempoTeste = 95; 
         String placaVeiculo = "ABC-1234";
 
-        System.out.println("--- RQ2.9: Cálculo para o mesmo tempo (" + tempoTeste + " min) nos 3 perfis ---");
+        System.out.println("---: Cálculo para o mesmo tempo (" + tempoTeste + " min) nos 3 perfis ---");
         
         Tiquete tiqueteRotativo = new Tiquete(placaVeiculo, tempoTeste, new PerfilRotativo());
         tiqueteRotativo.exibirDetalhes();
@@ -102,7 +102,7 @@ public class Main {
         Tiquete tiqueteConveniado = new Tiquete(placaVeiculo, tempoTeste, new PerfilConveniado());
         tiqueteConveniado.exibirDetalhes();
 
-        System.out.println("\n--- RQ2.6 e RQ2.9: Demonstração de troca de perfil em tempo de execução no mesmo tíquete ---");
+        System.out.println("\n---: Demonstração de troca de perfil em tempo de execução no mesmo tíquete ---");
         
         Tiquete tiqueteDinamico = new Tiquete("XYZ-9876", 120, new PerfilRotativo());
         
