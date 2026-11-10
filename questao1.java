@@ -115,7 +115,7 @@ public class Questao1 {
         System.out.println("\n--- Alteração 3: Quantidade vai para 3 (Volta a ter estoque -> Alerta de Vendas) ---");
         notebook.setQuantidade(3); 
 
-        System.out.println("\n--- Removendo a área de Auditoria em tempo de execução (RQ1.5) ---");
+        System.out.println("\n--- Removendo a área de Auditoria em tempo de execução ---");
         notebook.removerObservador(auditoria);
 
         System.out.println("\n--- Alteração 4: Quantidade vai para 2 (Auditoria não deve registrar log) ---");
